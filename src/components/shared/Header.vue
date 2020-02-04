@@ -3,8 +3,8 @@
   <div><router-link to="/" class="link" >
   <img style="width:36px;margin-left: 7px;" src="https://i.imgur.com/AUVhn2G.png" /> <h3>DINQ</h3></router-link></div>
   <div class="header-right">
-    <router-link to="/categories" class="link"><h3>Play</h3></router-link>
-    <router-link to="/event-calendar" class="link"><h3>Event Calendar</h3></router-link>
+    <router-link to="/categories" class="link"><h3>Play Quiz</h3></router-link>
+    <router-link to="/event-calendar" class="link"><h3>Upcoming Quiz</h3></router-link>
   </div>
 </div>
 </template>

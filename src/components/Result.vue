@@ -5,7 +5,7 @@
     <div class="flex-container">
     <h1>You scored <span class="highlight" :style="{color: $store.getters.category.category_color}">{{score.score}}</span>/{{score.total}}</h1>
     <router-link to="/categories" class="link">
-        <button class="primary-button" :style="{backgroundColor: $store.getters.category.category_color}">Go back to categories</button>
+        <button class="primary-button" :style="{backgroundColor: $store.getters.category.category_color}">Play another Quiz</button>
     </router-link>
     <h2 class="share-header">Challenge your friends now! Share your scores on</h2><br><br>
     <div>
