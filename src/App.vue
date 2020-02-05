@@ -1,8 +1,8 @@
 <template>
 <div>
-<Header></Header>
+<div class="header-div"><Header></Header></div>
   <div id="app">
-    <router-view></router-view>
+    <router-view style="margin-top:70px;"></router-view>
   </div>
 <Footer></Footer>
 </div>
@@ -24,7 +24,7 @@ export default {
 body {
   background-color: #252c4a;
   color: #fefeff;
-  font-family: 'Rubik', 'Avenir', Helvetica, Arial, sans-serif;;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -48,6 +48,12 @@ div {
   margin: 0;
   padding: 0;
 }
+.header-div{
+    position: fixed;
+    width: 100%;
+    background-color: #252c4a;
+    top: 0;
+}
 .primary-button {
     padding: 10px 40px;
     border-radius: 6px;
@@ -55,7 +61,7 @@ div {
     color: white;
     font-size: 1.2em;
     background-color: #234634;
-    bordeR: 1px solid #3b4b96;
+    border: 1px solid #3b4b96;
 }
 .highlight {
     color: #838bb3;
