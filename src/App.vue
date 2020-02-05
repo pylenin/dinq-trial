@@ -53,6 +53,7 @@ div {
     width: 100%;
     background-color: #252c4a;
     top: 0;
+    z-index: 1000;
 }
 .primary-button {
     padding: 10px 40px;

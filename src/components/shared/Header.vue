@@ -61,9 +61,10 @@ export default {
   border-bottom: 3px solid #138808;
   margin: 5px;
 }
-/* .header-right {
-  display: flex;
-} */
+.header-right {
+  /* display: flex; */
+  float: right;
+}
 
 .header-right h3 {
   border: none;
