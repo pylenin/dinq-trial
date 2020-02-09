@@ -1,5 +1,8 @@
 <template>
 <div>
+  <div class="promotab" @click="goToInstagram()">
+    Follow us on Instagram
+  </div>
 <Header></Header>
   <div id="app">
     <router-view></router-view>
@@ -16,6 +19,11 @@ export default {
   components: {
     Header,
     Footer
+  },
+  methods: {
+    goToInstagram () {
+      window.open('https://www.instagram.com/dinqindia/', '_blank');
+    }
   }
 }
 </script>
@@ -161,5 +169,13 @@ div {
   padding: 9px;
   margin-top: -46px;
   position: relative;
+}
+
+.promotab {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  height: 35px;
+  text-align: center;
+  padding-top: 14px;
+  cursor: pointer;
 }
 </style>
