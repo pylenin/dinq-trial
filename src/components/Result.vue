@@ -103,6 +103,9 @@ export default {
 .share-header {
     margin-top: 80px;
 }
+.button-primary {
+    color: white;
+}
 
 .share-section .share {
     border: 1px solid white;
