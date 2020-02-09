@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="promotab" @click="goToInstagram()">
-    Follow us on Instagram
+    Follow us on Instagram @dinqIndia
   </div>
 <Header></Header>
   <div id="app">

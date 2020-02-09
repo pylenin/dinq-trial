@@ -118,6 +118,10 @@ export default {
     min-height: 85vh;
 }
 
+.primary-button {
+    color: white;
+}
+
 .quiz-category--header {
     text-align: center;
 }

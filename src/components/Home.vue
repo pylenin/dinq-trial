@@ -103,6 +103,7 @@ export default {
   justify-content: flex-start;
   overflow-x: scroll;
   margin-bottom: 80px;
+  -ms-overflow-style: none;
 }
 
 .section p {
@@ -115,5 +116,9 @@ export default {
 
 .card-section .card-content {
   font-size: 19px;
+}
+
+.card-section::-webkit-scrollbar {
+  display: none;
 }
 </style>
