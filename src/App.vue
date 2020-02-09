@@ -2,7 +2,7 @@
 <div>
 <div class="header-div"><Header></Header></div>
   <div id="app">
-    <router-view style="margin-top:70px;"></router-view>
+    <router-view class="router"></router-view>
   </div>
 <Footer></Footer>
 </div>
@@ -24,7 +24,7 @@ export default {
 body {
   background-color: #252c4a;
   color: #fefeff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Rubik', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -63,6 +63,9 @@ div {
     font-size: 1.2em;
     background-color: #234634;
     border: 1px solid #3b4b96;
+}
+.router{
+  margin-top:70px;
 }
 .highlight {
     color: #838bb3;
