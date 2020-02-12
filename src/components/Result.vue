@@ -103,7 +103,7 @@ export default {
 .share-header {
     margin-top: 80px;
 }
-.button-primary {
+.primary-button {
     color: white;
 }
 
