@@ -10,7 +10,7 @@
     <div v-if="!answering && questions[counter]" class="question-section">
         <h3 class="question-counter" :style="{borderBottom: '1px dotted ' + category.category_color}">
             <span class="highlight" :style="{color: category.category_color}">Question {{counter + 1}}</span>/{{ questions.length }}</h3>
-        <h4 class="question">{{questions[counter].question}}</h4>
+        <h4 v-html="questions[counter].question" class="question"></h4>
         <p v-for="options in questions[counter].choices"
         :key="options"
         class="options" 
