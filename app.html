@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    <title>D Inq</title>
+    {{ HEAD }}
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+  
+        gtag('config', 'UA-156897092-1');
+      </script>
+      <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+      <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+          OneSignal.init({
+            appId: "003d4d54-73f6-45ad-ac13-85209ff7ff2e",
+          });
+        });
+      </script>  
+  </head>
+  <body {{ BODY_ATTRS }}>
+    <noscript>
+      <strong>We're sorry but myquiz doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    {{ APP }}
+  </body>
+</html>
