@@ -15,6 +15,10 @@ $ npm run dev
 $ npm run build
 $ npm run start
 
+or
+
+$ npm run deploy
+
 # generate static project
 $ npm run generate
 ```

@@ -1,10 +1,10 @@
 <template>
   <div v-if="category" class="quiz-page">
     <audio id="correctAudio">
-      <!-- <source src="../../assets/correct.wav" type="audio/wav" /> -->
+      <source src="../../assets/correct.wav" type="audio/wav" />
     </audio>
     <audio id="wrongAudio">
-      <!-- <source src="../../assets/wrong.wav" type="audio/wav" /> -->
+      <source src="../../assets/wrong.wav" type="audio/wav" />
     </audio>
     <h1 class="quiz-category--header">{{ category.name }}</h1>
     <div v-if="!answering && questions[counter]" class="question-section">
