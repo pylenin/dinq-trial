@@ -11,7 +11,7 @@
             <span style="color: red">Quiz Challenge</span><br>
             <span style="margin-top: 270px;color: white; font-size: 0.5em;color: red;padding: 0;">Participate to win cash prizes and Dinq merchandise</span>
         </p>
-        <button @click="goToInstagram()" class="primary-button promotion-button">Go to the challenge</button>
+        <button @click="goToInstagram()" class="primary-button promotion-button">Participate Now</button>
         </div>
     </div>
     <div class="hide-on-small">
@@ -31,7 +31,7 @@
                 <div v-bind:style="showContent === 'About' ? 'border-bottom: 4px solid rgb(37, 44, 74);' : 'border-bottom: none;'">About</div>
                 <div v-bind:style="showContent === 'Rules' ? 'border-bottom: 4px solid rgb(37, 44, 74);' : 'border-bottom: none;'">Rules</div>
                 <div v-bind:style="showContent === 'Prizes' ? 'border-bottom: 4px solid rgb(37, 44, 74);' : 'border-bottom: none;'">Prizes</div>
-                <div v-bind:style="showContent === 'Bonus points' ? 'border-bottom: 4px solid rgb(37, 44, 74);' : 'border-bottom: none;'">Bonus</div>
+                <div v-bind:style="showContent === 'Bonus' ? 'border-bottom: 4px solid rgb(37, 44, 74);' : 'border-bottom: none;'">Bonus</div>
             </div>
             <div class="sub-menu-content" v-if="showContent === 'About'">
                 <h3>Dinq Alert is a 7 day Instagram Challenge, where we will ask questions relevant to India through the
@@ -57,7 +57,7 @@
                 <h3>2 nd prize – Rs 300 and merchandise</h3>
                 <h3>3 rd prize – Rs 200 and merchandise</h3>
             </div>
-            <div class="sub-menu-content" v-if="showContent === 'Bonus points'">
+            <div class="sub-menu-content" v-if="showContent === 'Bonus'">
                 <p>Would you like to stay ahead of the curve? Earn some additional points? You can follow the steps below</p>
                 <ul style="text-align: left;">
                     <li>Comment below and tag a friend(to get extra points you can comment as many times you wish
