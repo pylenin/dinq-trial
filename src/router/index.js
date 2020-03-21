@@ -46,7 +46,7 @@ export default new Router({
       component: EventCalendar
     },
     {
-      path: '/promotion',
+      path: '/dinq-marathon',
       name: 'Promotion',
       component: Promotion
     }
