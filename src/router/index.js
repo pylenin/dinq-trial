@@ -7,6 +7,7 @@ import Categories from '../components/Categories'
 import Result from '../components/Result'
 import AboutUs from '../components/AboutUs'
 import EventCalendar from '../components/EventCalendar'
+import Promotion from '../components/Promotion'
 
 Vue.use(Router);
 export default new Router({
@@ -43,6 +44,11 @@ export default new Router({
       path: '/event-calendar',
       name: 'EventCalendar',
       component: EventCalendar
+    },
+    {
+      path: '/promotion',
+      name: 'Promotion',
+      component: Promotion
     }
   ]
 });
