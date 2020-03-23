@@ -1,15 +1,19 @@
 <template>
 <div>
-  <div class="section">
+  <!-- <div class="section">
     <img style="width: 300px;" src="../assets/promo_background.png"/>
     <div>
     <p><span class="highlight">DINQ marathon</span> is here</p>
     <router-link to="/dinq-marathon" ><button class="primary-button">Know more</button></router-link>
     </div>
-  </div>
-  <div class="section" style="min-height: 0vh;">
+  </div> -->
+  <div class="section">
     <p>So you think you know <span class="highlight">India</span>?</p>
-    <!-- <img style="width: 100%" src="../assets/landing_1.png"/> -->
+    <img style="width: 100%" src="../assets/landing_1.png"/>
+  </div>
+    <div class="section">
+    <p>Be <span class="highlight">'D' INQ</span>uizitive | Explore <span class="highlight">India</span></p>
+    <button class="primary-button" @click="goToPage('/categories')">Get started</button>
   </div>
   <div class="section card-section">
     <div v-for="category in categories" :style="{backgroundColor: category.category_color}" :key="category.id" class="card" @click="goToQuiz(category)">
@@ -20,10 +24,6 @@
       <p class="card-heading">{{category.name}}</p>
       <p class="card-content">{{category.description}}</p>
     </div>
-  </div>
-  <div class="section">
-    <p>Be <span class="highlight">'D' INQ</span>uizitive | Explore <span class="highlight">India</span></p>
-    <button class="primary-button" @click="goToPage('/categories')">Get started</button>
   </div>
   <div class="section" style="margin-bottom: 40px;">
     <div class="section-half">

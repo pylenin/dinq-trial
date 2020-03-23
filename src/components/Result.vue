@@ -7,7 +7,12 @@
     <router-link to="/categories" class="link">
         <button class="primary-button" :style="{backgroundColor: $store.getters.category.category_color}">Play another Quiz</button>
     </router-link>
-    <h2 class="share-header">Challenge your friends now! Share your scores on</h2><br><br>
+    <h2 v-if="category.slug !== 'n-covid-19'" class="share-header">Challenge your friends now! Share your scores on</h2>
+    <h2 v-if="category.slug === 'n-covid-19'" class="share-header">
+        It's your turn to fight against Fake news. <br>
+        Spread the awareness about nCovid-19 among your friends and help them stay safe from this deadly virus.
+    </h2>
+    <br><br>
     <div>
         <social-sharing :url="getShareUrl"
                       title="D Inquizitive"
