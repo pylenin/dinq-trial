@@ -1,5 +1,4 @@
 <template>
-<h1>Login to Dinq</h1>
 
 <form method="post">
   <div class="imgcontainer">
