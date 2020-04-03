@@ -1,118 +1,110 @@
 <template>
+    <v-container grid-list-md>
+      <v-layout row wrap align-center justify-center fill-height>
+        <v-flex xs12 sm8 lg4 md5>
+          <v-card class="login-card">
+            <v-card-title>
+              <span class="headline">Login to Movies</span>
+            </v-card-title>
 
-<form method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+            <v-spacer/>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+            <v-card-text>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+              <v-layout
+                row
+                fill-height
+                justify-center
+                align-center
+                v-if="loading"
+              >
+                <v-progress-circular
+                  :size="50"
+                  color="primary"
+                  indeterminate
+                />
+              </v-layout>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-              
+              <v-form v-else ref="form" v-model="valid" lazy-validation>
+                <v-container>
 
+                  <v-text-field
+                    v-model="credentials.username"
+                    :counter="70"
+                    label="username"
+                    :rules="rules.username"
+                    maxlength="70"
+                    required
+                  />
+
+                  <v-text-field
+                    type="password"
+                    v-model="credentials.password"
+                    :counter="20"
+                    label="password"
+                    :rules="rules.password"
+                    maxlength="20"
+                    required
+                  />
+
+                </v-container>
+                <v-btn class="pink white--text" :disabled="!valid" @click="login">Login</v-btn>
+
+              </v-form>
+
+
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
 </template>
 
 <script>
+import axios from 'axios';
+import swal from 'sweetalert2';
+import router from '../../router';
 export default {
     name: 'Auth',
     data: () => ({
         credentials: {},
         valid:true,
-        loading:false
+        loading:false,
+        rules: {
+          username: [
+            v => !!v || "Username is required",
+            v => (v && v.length > 3) || "A username must be more than 3 characters long",
+            v => /^[a-z0-9_]+$/.test(v) || "A username can only contain letters and digits"
+          ],
+          password: [
+            v => !!v || "Password is required",
+            v => (v && v.length > 7) || "The password must be longer than 7 characters"
+          ]
+        }
     }),
     methods: {
         login() {
-            
+          // checking if the input is valid
+            if (this.$refs.form.validate()) {
+              this.loading = true;
+              axios.post('http://localhost:8000/auth/', this.credentials).then(res => {
+                this.$session.start();
+                this.$session.set('token', res.data.token);
+                router.push('/');
+              }).catch(e => {
+                this.loading = false;
+                swal({
+                  type: 'warning',
+                  title: 'Error',
+                  text: 'Wrong username or password',
+                  showConfirmButton:false,
+                  showCloseButton:false,
+                  timer:3000
+                })
+              })
+            }
         }
     }
 }
 </script>
-
-<style scoped>
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
-</style>
