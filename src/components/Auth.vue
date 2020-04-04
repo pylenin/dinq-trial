@@ -92,7 +92,7 @@ export default {
                 this.$session.start();
                 this.$session.set('token', res.data.token);
                 router.push('/');
-              }).catch(e => {
+              }).catch(() => {
                 this.loading = false;
                 swal({
                   type: 'warning',
