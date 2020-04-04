@@ -34,9 +34,6 @@
 import axios from 'axios'
 export default {
   name: 'Quiz',
-  mounted() {
-    this.checkLoggedIn();
-  },
   components: {
   },
   props: {
@@ -112,6 +109,7 @@ export default {
     }
   },
   mounted() {
+    this.checkLoggedIn();
     window.scrollTo(top);
     this.setQuiz();
   }
