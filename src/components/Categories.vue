@@ -18,6 +18,8 @@
 <script>
 import axios from 'axios';
 import Modal from './shared/Modal'
+import router from './router'
+
 export default {
   name: 'Categories',
   components: {

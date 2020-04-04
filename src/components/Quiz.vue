@@ -34,6 +34,9 @@
 import axios from 'axios'
 export default {
   name: 'Quiz',
+  mounted() {
+    this.checkLoggedIn();
+  },
   components: {
   },
   props: {
@@ -100,7 +103,13 @@ export default {
           }
           this.$store.commit('setScore', result);
           this.$router.push('/result');
+      },
+      checkLoggedIn() {
+      this.$session.start();
+      if (!this.$session.has("token")) {
+        router.push("/auth");
       }
+    }
   },
   mounted() {
     window.scrollTo(top);
