@@ -8,7 +8,6 @@ import Result from '../components/Result'
 import AboutUs from '../components/AboutUs'
 import EventCalendar from '../components/EventCalendar'
 import Promotion from '../components/Promotion'
-import Auth from '../components/Auth'
 
 Vue.use(Router);
 export default new Router({
