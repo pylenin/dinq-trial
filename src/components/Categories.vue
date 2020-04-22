@@ -16,7 +16,6 @@
 
 <script>
 import axios from 'axios';
-import Modal from './shared/Modal'
 
 export default {
   name: 'Categories',
