@@ -20,9 +20,6 @@ import Modal from './shared/Modal'
 
 export default {
   name: 'Categories',
-  components: {
-    'modal': Modal
-  },
   props: {
     game: String,
   },
