@@ -1,7 +1,6 @@
 <template>
 <div class="categories">
-    <modal v-if="showModal" @close-name-modal="closeModal"></modal>
-    <h1 class="page-title">Welcome {{name}}, Choose your category</h1>
+    <h1 class="page-title">Choose your category</h1>
     <div class="flex-container">
     <div v-for="category in categories" :style="{backgroundColor: category.category_color}" :key="category.id" class="card" @click="goToQuiz(category)">
       <img :src="category.image_url" class="card-image">
@@ -31,7 +30,6 @@ export default {
     return {
         categories: [],
         name: '',
-        showModal: false
     }
   },
   methods: {
@@ -43,20 +41,8 @@ export default {
           this.categories = result.data.categories;
       },
       goToQuiz (category) {
-        if (this.name) {
-          this.$store.commit('setCategory', category);
           this.$router.push('/quiz/' + category.slug);
-        } else {
-          this.showModal = true;
         }
-      },
-      getName () {
-        this.name = localStorage.getItem('dinquser');
-      },
-      closeModal: function() {
-        this.getName();
-        this.showModal = false;
-      }
   },
   mounted() {
     window.scrollTo(top);
