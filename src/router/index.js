@@ -49,11 +49,6 @@ export default new Router({
       path: '/dinq-marathon',
       name: 'Promotion',
       component: Promotion
-    },
-    {
-      path: '/auth',
-      name: 'Auth',
-      component: Auth
     }
   ]
 });
