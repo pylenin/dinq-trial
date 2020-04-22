@@ -51,12 +51,6 @@ export default {
     }
   },
   methods: {
-      checkLoggedIn() {
-      this.$session.start();
-      if (!this.$session.has("token")) {
-        router.push("/auth");
-      }
-    },
       async setQuiz () {
         this.category = this.$store.getters.category;
         if (this.category) {
@@ -110,7 +104,6 @@ export default {
       }
   },
   mounted() {
-    this.checkLoggedIn();
     window.scrollTo(top);
     this.setQuiz();
   }
